@@ -1,0 +1,38 @@
+/* howtofishgames.com v1 */
+:root{--bg:#0b1c24;--panel:#122a34;--ink:#e8f3f7;--muted:#9bb8c4;--accent:#3ecf8e;--line:#1e3d4a;--max:720px}
+*{box-sizing:border-box}body{margin:0;font-family:Georgia,"Times New Roman",serif;background:var(--bg);color:var(--ink);line-height:1.65}
+a{color:var(--accent)}a:hover{text-decoration:underline}
+.wrap{max-width:var(--max);margin:0 auto;padding:1.25rem 1rem 3rem}
+header{border-bottom:1px solid var(--line);margin-bottom:1.5rem;padding-bottom:.75rem}
+.brand{font-size:1.15rem;font-weight:700;color:var(--ink);text-decoration:none}
+nav{display:flex;flex-wrap:wrap;gap:.75rem 1rem;margin-top:.75rem;font-size:.95rem}
+nav a{color:var(--muted);text-decoration:none}nav a[aria-current="page"]{color:var(--accent)}
+h1{font-size:1.85rem;line-height:1.25;margin:0 0 .75rem}
+h2{font-size:1.25rem;margin:1.75rem 0 .5rem;border-bottom:1px solid var(--line);padding-bottom:.35rem}
+p,li{color:var(--ink)}.muted{color:var(--muted);font-size:.95rem}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:1rem 1.1rem;margin:1rem 0}
+.card a{font-weight:600;text-decoration:none}
+.grid{display:grid;gap:.85rem;margin:1.25rem 0}
+footer{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.cta{display:inline-block;margin:.5rem 0 0;padding:.55rem 1rem;background:var(--accent);color:#062016;border-radius:8px;text-decoration:none;font-weight:700}
+.warn{background:#2a1c12;border:1px solid #6a3e1e;border-radius:10px;padding:.85rem 1rem;margin:1rem 0}
+.steps{counter-reset:step;list-style:none;padding:0;margin:1rem 0}
+.steps li{position:relative;padding:.7rem .85rem .7rem 2.6rem;margin:0 0 .55rem;background:var(--panel);border:1px solid var(--line);border-radius:10px}
+.steps li::before{counter-increment:step;content:counter(step);position:absolute;left:.7rem;top:.7rem;width:1.35rem;height:1.35rem;border-radius:50%;background:var(--accent);color:#062016;font:700 .85rem/1.35rem system-ui,sans-serif;text-align:center}
+.island-flow{list-style:none;padding:0;margin:1.1rem 0 1.4rem}
+.island-flow li{position:relative;padding:0 0 1.15rem 1.35rem;border-left:2px solid var(--line)}
+.island-flow li:last-child{padding-bottom:0;border-left-color:transparent}
+.island-flow li::before{content:"";position:absolute;left:-.42rem;top:.35rem;width:.7rem;height:.7rem;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px var(--bg)}
+.island-flow strong{display:block}
+.island-flow p{margin:.2rem 0 0;color:var(--muted);font-size:.95rem}
+.island-flow a{font-weight:700}
+.check-list{list-style:none;padding:0;margin:1rem 0}
+.check-list li{margin:0 0 .45rem;padding:.65rem .8rem;background:var(--panel);border:1px solid var(--line);border-radius:8px}
+.check-list label{display:flex;gap:.65rem;align-items:flex-start;cursor:pointer}
+.check-list input{margin-top:.3rem;accent-color:var(--accent)}
+.stuck{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:1rem 1.1rem;margin:1.25rem 0}
+.stuck h2{margin-top:0;border:0;padding:0}
+.stuck ul{margin:.4rem 0 0;padding-left:1.15rem}
+table.facts{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.95rem}
+table.facts th,table.facts td{text-align:left;padding:.45rem .4rem;border-bottom:1px solid var(--line);vertical-align:top}
+table.facts th{color:var(--muted);font-weight:600}
