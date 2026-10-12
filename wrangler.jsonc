@@ -1,0 +1,14 @@
+{
+  "name": "howtofishgames",
+  "pages_build_output_dir": "./dist",
+  "compatibility_date": "2026-10-12",
+  "vars": {
+    "AUTH_ORIGIN": "https://howtofishgames.com"
+  },
+  "kv_namespaces": [
+    {
+      "binding": "AUTH_USERS",
+      "id": "ac61b73ff47b42f48c3a8809b7b74ffe"
+    }
+  ]
+}

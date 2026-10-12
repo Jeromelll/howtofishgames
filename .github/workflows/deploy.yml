@@ -20,7 +20,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Build static site
+        run: python3 build.py
+
+      - name: Check static site
+        run: python3 tools/check_site.py
+
       - name: Deploy to Cloudflare Pages
         # Only fires once the CLOUDFLARE_API_TOKEN secret is configured in the repo.
         if: ${{ env.CLOUDFLARE_API_TOKEN != '' }}
-        run: npx wrangler@4.129.0 pages deploy . --project-name howtofishgames
+        run: npx wrangler@4.129.0 pages deploy dist --project-name howtofishgames
