@@ -29,7 +29,7 @@ def build() -> None:
         if source.is_dir():
             if source.name == "assets" or (source / "index.html").is_file():
                 shutil.copytree(source, target, dirs_exist_ok=True)
-        elif source.is_file() and (source.suffix == ".html" or source.name in {"robots.txt", "sitemap.xml", "_headers", "_redirects"}):
+        elif source.is_file() and (source.suffix == ".html" or source.name in {"robots.txt", "sitemap.xml", "_headers", "_redirects", "llms.txt"}):
             shutil.copy2(source, target)
     assert not any((OUTPUT_DIR / name).exists() for name in (".dev.vars", ".env", "functions", "wrangler.jsonc"))
     print(f"Built static site in {OUTPUT_DIR.relative_to(ROOT)}")

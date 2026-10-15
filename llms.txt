@@ -1,0 +1,13 @@
+# How to Fish Game Guides
+
+> Fan-made, unofficial guides for the Steam game How to Fish by Dazed Games (https://store.steampowered.com/app/4001890/How_to_Fish/). Not affiliated with the developer or publisher.
+
+## Guides
+- [How to play](https://howtofishgames.com/how-to-play/): cast, fight reel tension, sell fish, buy gear, then unlock islands with quest hand-ins
+- [Beginner guide](https://howtofishgames.com/beginner-guide/): first-hour money and gear, why you cannot skip islands
+- [Islands unlock order](https://howtofishgames.com/islands/): each island opens after a boss drop + NPC hand-in
+- [Giant Piranha](https://howtofishgames.com/giant-piranha/): bait, fight and the Giant Piranha Skeleton hand-in that unlocks Island 3
+- [Quest items list](https://howtofishgames.com/fish-list/): verified quest items only
+
+## About
+- [About](https://howtofishgames.com/about/) · [Contact](https://howtofishgames.com/contact/)
