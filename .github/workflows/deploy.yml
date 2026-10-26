@@ -29,7 +29,10 @@ jobs:
         run: python3 build.py
 
       - name: Check static site
-        run: python3 tools/check_site.py
+        run: |
+          python3 tools/check_site.py
+          python3 tools/check_content.py
+          node tools/test_catalog.cjs
 
       - name: Deploy to Cloudflare Pages
         # Only fires once the CLOUDFLARE_API_TOKEN secret is configured in the repo.
