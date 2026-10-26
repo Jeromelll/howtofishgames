@@ -18,6 +18,14 @@ SOURCE_ONLY = {
     "tools",
     "wrangler.jsonc",
 }
+ROOT_FILES = {
+    "robots.txt",
+    "sitemap.xml",
+    "_headers",
+    "_redirects",
+    "llms.txt",
+    "e0d0a3ba087443e3a3e0ab8fed29896b.txt",
+}
 
 
 def build() -> None:
@@ -29,7 +37,7 @@ def build() -> None:
         if source.is_dir():
             if source.name == "assets" or (source / "index.html").is_file():
                 shutil.copytree(source, target, dirs_exist_ok=True)
-        elif source.is_file() and (source.suffix == ".html" or source.name in {"robots.txt", "sitemap.xml", "_headers", "_redirects", "llms.txt"}):
+        elif source.is_file() and (source.suffix == ".html" or source.name in ROOT_FILES):
             shutil.copy2(source, target)
     assert not any((OUTPUT_DIR / name).exists() for name in (".dev.vars", ".env", "functions", "wrangler.jsonc"))
     print(f"Built static site in {OUTPUT_DIR.relative_to(ROOT)}")

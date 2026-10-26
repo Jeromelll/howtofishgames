@@ -8,6 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT / "dist"
+INDEXNOW_KEY = "e0d0a3ba087443e3a3e0ab8fed29896b"
 
 
 def fail(message: str) -> None:
@@ -60,6 +61,14 @@ def main() -> int:
         if (SITE / rel).exists():
             fail(f"private runtime file leaked into static output: {rel}")
     print("PASS auth source and Wrangler config excluded from static output")
+
+    key_file = SITE / f"{INDEXNOW_KEY}.txt"
+    if not key_file.is_file():
+        fail(f"missing {INDEXNOW_KEY}.txt")
+    body = key_file.read_bytes()
+    if body not in {INDEXNOW_KEY.encode("ascii"), f"{INDEXNOW_KEY}\n".encode("ascii")}:
+        fail("IndexNow key file must contain only the key")
+    print(f"PASS {INDEXNOW_KEY}.txt is plain text")
     print(f"All checks passed ({len(pages)} HTML pages).")
     return 0
 
