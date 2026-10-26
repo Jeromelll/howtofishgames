@@ -1,6 +1,7 @@
+@font-face { font-family: "Island Lettering"; src: url("/assets/game/im-fell-english.ttf") format("truetype"); font-display: swap; }
 :root {
-  color-scheme: light dark;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color-scheme: light;
+  font-family: "Trebuchet MS", Arial, sans-serif;
 }
 
 body {
@@ -8,22 +9,22 @@ body {
   min-height: 100vh;
   margin: 0;
   place-items: center;
-  background: #f4f6fa;
-  color: #172033;
+  background: #648fad;
+  color: #293242;
 }
 
 main {
   box-sizing: border-box;
   width: min(100% - 32px, 440px);
   padding: 32px;
-  border: 1px solid #dce2ec;
-  border-radius: 16px;
-  background: #fff;
-  box-shadow: 0 16px 48px #17203312;
+  border: 1px solid #b8a77f;
+  border-radius: 3px;
+  background: #f7efd9;
+  box-shadow: 0 16px 48px #29324212;
 }
 
-h1 { margin: 0 0 8px; font-size: 1.6rem; }
-p { line-height: 1.5; color: #566176; }
+h1 { margin: 0 0 8px; font: 36px/1.15 "Island Lettering", Georgia, serif; }
+p { line-height: 1.5; color: #575e5a; }
 
 #providers {
   display: grid;
@@ -35,35 +36,29 @@ button {
   width: 100%;
   min-height: 46px;
   padding: 10px 14px;
-  border: 1px solid #c9d1df;
-  border-radius: 9px;
-  background: #fff;
+  border: 1px solid #b8a77f;
+  border-radius: 3px;
+  background: #f7efd9;
   color: inherit;
   font: inherit;
   font-weight: 600;
   cursor: pointer;
 }
 
-button:hover { background: #f0f4fa; }
+button:hover { background: #e8dbb8; }
 button:disabled { cursor: wait; opacity: .65; }
 #notice { min-height: 1.5em; color: #9a3412; }
 
 #account {
   padding: 14px;
-  border-radius: 9px;
-  background: #f4f6fa;
+  border-radius: 3px;
+  background: #e8dbb8;
   overflow-wrap: anywhere;
 }
 
 #account p { margin: 4px 0; }
-a { color: #2457c5; }
+a { color: #245b78; }
 
-@media (prefers-color-scheme: dark) {
-  body { background: #111827; color: #e8edf6; }
-  main { background: #1b2433; border-color: #344054; box-shadow: 0 16px 48px #0004; }
-  p { color: #b2bdcf; }
-  button { background: #222d3e; border-color: #43516a; }
-  button:hover { background: #2d3a4f; }
-  #account { background: #222d3e; }
-  a { color: #9db9ff; }
-}
+
+main { border-top: 6px solid #f39a32; }
+a:focus-visible, button:focus-visible { outline: 3px solid #245b78; outline-offset: 4px; }

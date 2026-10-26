@@ -26,8 +26,11 @@ class Page(HTMLParser):
             self.noindex = 'noindex' in attrs.get('content', '')
         if tag in ('a', 'link') and 'href' in attrs:
             self.links.append(attrs['href'])
-        if tag == 'script' and 'src' in attrs:
+        if tag in ('script', 'img') and 'src' in attrs:
             self.links.append(attrs['src'])
+        if tag == 'img':
+            assert attrs.get('alt'), 'Image requires alternative text'
+            assert attrs.get('width') and attrs.get('height'), 'Image requires dimensions'
 
 pages = {('/' if p == SITE/'index.html' else '/' + p.parent.relative_to(SITE).as_posix() + '/'): p for p in SITE.rglob('index.html')}
 game = set(pages) - {'/about/', '/contact/', '/privacy/'}
