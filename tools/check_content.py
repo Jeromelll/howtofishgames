@@ -34,7 +34,7 @@ class Page(HTMLParser):
 
 pages = {('/' if p == SITE/'index.html' else '/' + p.parent.relative_to(SITE).as_posix() + '/'): p for p in SITE.rglob('index.html')}
 game = set(pages) - {'/about/', '/contact/', '/privacy/'}
-assert len(game) == 20, f'Expected 20 game pages, got {len(game)}'
+assert len(game) == 25, f'Expected 25 game pages, got {len(game)}'
 xml = ElementTree.parse(SITE/'sitemap.xml')
 urls = {x.text for x in xml.findall('.//{*}loc')}
 assert urls == {ORIGIN + path for path in pages}, 'Sitemap and indexable pages differ'

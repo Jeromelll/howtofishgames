@@ -8,7 +8,7 @@ Not affiliated with the developer.
 
 ## Content checks
 
-The site has 20 game content pages, plus About, Contact and Privacy. The fish index links to every guide and supports search, type and progression-stage filters. Links remain available without JavaScript. Community sources and version limits are listed on individual pages.
+The site has 25 game content pages, plus About, Contact and Privacy. The fish index links to every guide and supports search, type and progression-stage filters. Links remain available without JavaScript. Community sources and version limits are listed on individual pages.
 
 ```sh
 python3 build.py
