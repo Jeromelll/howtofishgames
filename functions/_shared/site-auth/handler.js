@@ -59,7 +59,7 @@ function cookie(name, value, maxAge) {
 }
 
 function loginRedirect(origin, result) {
-  const location = new URL("/login.html", origin);
+  const location = new URL("/login", origin);
   if (result) location.searchParams.set("auth", result);
   return new Response(null, {
     status: 302,

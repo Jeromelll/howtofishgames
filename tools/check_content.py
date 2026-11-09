@@ -50,6 +50,9 @@ for path, file in pages.items():
         local = SITE / unquote(url.path).lstrip('/')
         if url.path.endswith('/'):
             local /= 'index.html'
+        elif not local.is_file():
+            # Cloudflare Pages 的 pretty URL：/login 由 login.html 提供
+            local = local.with_name(local.name + '.html')
         assert local.is_file(), (path, 'broken local link', href)
 index = Page(pages['/fish-list/'].read_text())
 covered = {urlparse(urljoin(ORIGIN+'/fish-list/', h)).path for h in index.links}

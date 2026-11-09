@@ -42,7 +42,7 @@ def main() -> int:
     missing_nav = [
         page.relative_to(SITE).as_posix()
         for page in nav_pages
-        if 'href="/login.html">Log in</a>' not in page.read_text(encoding="utf-8")
+        if 'href="/login">Log in</a>' not in page.read_text(encoding="utf-8")
     ]
     if missing_nav:
         fail("Log in navigation missing from: " + ", ".join(missing_nav))
